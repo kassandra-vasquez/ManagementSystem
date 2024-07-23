@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .post("http://localhost:3000/auth/adminlogin", values)
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
+      .then((result) => {
+        navigate("/dashboard");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
