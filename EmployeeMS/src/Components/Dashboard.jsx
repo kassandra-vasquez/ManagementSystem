@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 export const Dashboard = () => {
@@ -26,7 +26,7 @@ export const Dashboard = () => {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard"
+                  to="/dashboard/employee"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 bi-people ms-2"></i>
@@ -37,7 +37,7 @@ export const Dashboard = () => {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard"
+                  to="/dashboard/category"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 bi-columns ms-2"></i>
@@ -46,7 +46,7 @@ export const Dashboard = () => {
               </li>
               <li className="w-100">
                 <Link
-                  to="/dashboard"
+                  to="/dashboard/profile"
                   className="nav-link px-0 align-middle text-white"
                 >
                   <i className="fs-4 bi-person ms-2"></i>
@@ -64,6 +64,12 @@ export const Dashboard = () => {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="col p-0 m-0">
+          <div className="p-2 d-flex justify-content-center shadow">
+            <h4>Employee Management System</h4>
+          </div>
+          <Outlet />
         </div>
       </div>
     </div>
