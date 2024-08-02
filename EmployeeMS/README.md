@@ -1,5 +1,7 @@
-# React + Vite
+# Employee Management System
+## React + Vite
 
+## How to Run Project
 cd Server
 npm start
 
@@ -9,3 +11,6 @@ npm run dev
 XXAMP Control Panel
 start Apache
 start MYSQL
+
+Admin Page
+http://localhost/phpmyadmin/index.php
