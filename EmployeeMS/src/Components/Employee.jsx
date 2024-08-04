@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, {  useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Employee = () => {
@@ -42,13 +42,23 @@ const Employee = () => {
             {employee.map((e) => (
               <tr>
                 <td>{e.name}</td>
-                <td><img src={`http://localhost:3000/Images/` + e.image} className="employee_image" /> </td>
+                <td>
+                  <img
+                    src={`http://localhost:3000/Images/` + e.image}
+                    className="employee_image"
+                  />{" "}
+                </td>
                 <td>{e.email}</td>
                 <td>{e.address}</td>
                 <td>{e.salary}</td>
                 <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <Link
+                    to={`/dashboard/edit_employee` + e.id}
+                    className="btn btn-info btn-sm me-2"
+                  >
+                    Edit
+                  </Link>
+                  <button className="btn btn-warning btn-sm">Delete</button>
                 </td>
               </tr>
             ))}
