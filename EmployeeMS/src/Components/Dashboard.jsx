@@ -15,7 +15,7 @@ export const Dashboard = () => {
               <span className="fs-5 fw-bolder d-none d-sm-inline">Menu</span>
             </Link>
             <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start id=menu">
-              <li>
+              <li className="w-100">
                 <Link
                   to="/dashboard"
                   className="nav-link text-white px-0 align-middle"

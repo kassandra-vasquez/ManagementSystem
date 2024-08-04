@@ -54,7 +54,7 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({
-  storage: storage
+  storage: storage,
 });
 
 router.post("/add_employee", upload.single("image"), (req, res) => {
@@ -76,6 +76,14 @@ router.post("/add_employee", upload.single("image"), (req, res) => {
       if (err) return res.json({ Status: false, Error: err });
       return res.json({ Status: true });
     });
+  });
+});
+
+router.get("/employee", (req, res) => {
+  const sql = "SELECT * FROM employee";
+  con.query(sql, (err, result) => {
+    if (err) return res.json({ Status: false, Error: "Query Error" });
+    return res.json({ Status: true, Result: result });
   });
 });
 
